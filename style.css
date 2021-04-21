@@ -1,0 +1,182 @@
+
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Video Background */
+.video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+video {
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.video-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(37, 180, 199, 0.35);
+}
+
+/* Container */
+.container {
+  min-width: 58rem;
+  min-height: 31rem;
+  color: black;
+  margin: 0 auto;
+  padding: 2.5rem 5rem;
+  border-radius: 5px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  background: rgba(236, 242, 243, 0.35);
+
+}
+
+.input-container {
+  position: relative;
+  top: 2rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Form */
+.form {
+  width: 48rem;
+}
+
+label {
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+input {
+  width: 95%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: #fff;
+  outline: none;
+
+}
+
+/* Button */
+button {
+  width: 100%;
+  height: rem;
+  border-radius: 2rem;
+  margin-top: 1.5rem;
+  border: none;
+  text-transform: uppercase;
+  background: #006959;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+
+
+/* Countdown */
+ul {
+  margin-left: -4.5rem;
+}
+
+li {
+
+  font-size: 3rem;
+  list-style-type: none;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 8rem;
+  text-align: center;
+}
+
+/* Complete */
+.complete {
+  position: relative;
+  top: 6rem;
+}
+
+
+/* Media Query: Large Smartphone (Vertical) */
+@media screen and (max-width: 600px) {
+  .video-background {
+
+  }
+  
+  video {
+
+    margin-top: -1px;
+  }
+
+  .container {
+
+    min-height: 245px;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .input-container {
+    top: unset;
+  }
+
+  .countdown {
+    position: relative;
+    top: 10px;
+  }
+
+  .form {
+    width: unset;
+  }
+
+  input {
+    width: 93%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  li {
+    font-size: 15px;
+  }
+
+  li span {
+    font-size: 40px;
+  }
+}

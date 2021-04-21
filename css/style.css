@@ -1,0 +1,288 @@
+/*
+
+OREDER: Base + typography > gen layout + grid > page layout > components
+0-600px:            Phone
+600 - 900px:        Tablet Portrait
+900-1200px:         Tablet Landscape
+[1200px -1800opx]   is where our normal styles apply
+1800px +:           Big Desktop
+
+$breakPoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desk
+1em = 16px
+*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes complete {
+  0% {
+    color: #eb1515; }
+  25% {
+    color: #7e350b; }
+  50% {
+    color: #cbeb5a;
+    transform: scale(1.5); }
+  75% {
+    color: #079c40; }
+  100% {
+    color: #12086b; } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottomSpin {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem) rotate(360deg); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  min-height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+::selection {
+  background-color: #ac2595;
+  color: #fff; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 35%; } }
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: 1.6rem;
+  letter-spacing: .2rem; }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+  @media only screen and (max-width: 56.25em) {
+    .u-margin-bottom-big {
+      margin-bottom: 4rem !important; } }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-top-big {
+  margin-top: 8rem !important; }
+  @media only screen and (max-width: 56.25em) {
+    .u-margin-top-big {
+      margin-top: 4rem !important; } }
+
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+  @media only screen and (max-width: 56.25em) {
+    .u-margin-top-huge {
+      margin-top: 6rem !important; } }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 35%; } }
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: 1.6rem;
+  letter-spacing: .2rem; }
+
+/* Button */
+button {
+  width: 100%;
+  height: 3rem;
+  border-radius: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  text-transform: uppercase;
+  background: #006669;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  letter-spacing: .2rem; }
+  button:hover {
+    filter: brightness(110%);
+    transform: scale(1.2); }
+
+/* Countdown */
+ul {
+  text-align: center; }
+
+li {
+  display: inline-block;
+  font-size: 3rem;
+  list-style-type: none;
+  padding: 1rem;
+  text-transform: uppercase; }
+
+li span {
+  display: block;
+  font-size: 8rem;
+  text-align: center; }
+
+/* Complete */
+.complete {
+  position: relative; }
+
+.complete-title {
+  animation: complete 4s infinite; }
+
+@media only screen and (max-width: 37.5em) {
+  .countdown {
+    position: relative;
+    top: 10px; } }
+
+/* Form */
+.form {
+  width: 48rem; }
+
+label {
+  font-weight: bold;
+  margin-left: 1rem; }
+
+input {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: #fff;
+  outline: none;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: .1rem; }
+
+@media only screen and (max-width: 37.5em) {
+  .form {
+    width: unset; } }
+
+/* Container */
+.container {
+  min-width: 60rem;
+  min-height: 33rem;
+  color: black;
+  margin: 0 auto;
+  padding: 2.5rem 5rem;
+  border-radius: 5px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  background: rgba(236, 242, 243, 0.35);
+  align-items: center;
+  text-align: center; }
+
+.input-container {
+  position: relative; }
+
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  letter-spacing: .4rem; }
+  @media only screen and (max-width: 37.5em) {
+    h1 {
+      font-size: 2.5rem; } }
+
+@media only screen and (max-width: 37.5em) {
+  .container {
+    min-width: unset;
+    width: 95vh;
+    min-height: 2.5rem;
+    padding: 2rem;
+    margin: 1rem; }
+  .input-container {
+    top: unset; } }
+
+/* Video Background */
+.video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100vw;
+  min-height: 100vh; }
+
+video {
+  object-fit: cover;
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.video-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(37, 180, 199, 0.35); }
+
+/* Media Query: Large Smartphone (Vertical) */
+@media only screen and (max-width: 37.5em) {
+  video {
+    margin-top: -1px; } }
